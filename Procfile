@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run CustomerSegmentation_Streamlit.py
