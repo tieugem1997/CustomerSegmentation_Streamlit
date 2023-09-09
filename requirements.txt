@@ -1,6 +1,10 @@
-streamlit
-numpy
-pandas
 matplotlib
-seaborn
+plotly
 scikit-learn
+streamlit
+seaborn
+squarify
+import-ipynb
+utils
+squarify
+findspark
