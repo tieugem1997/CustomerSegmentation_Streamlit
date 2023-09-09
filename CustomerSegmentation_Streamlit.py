@@ -174,36 +174,36 @@ elif choice == 'Data preparation':
         fig, ax = plt.subplots()
         ax.scatter(user_grouped['Sales'], user_grouped['Quantity'])
         st.pyplot(fig)
-
-        # User Feedback section
-        st.write("### User Feedback")
-        user_feedback = st.text_area("Please share your comments or feedback:", value='')
-    
-        if st.button("Submit Feedback"):
-            # Store the feedback with timestamp in a DataFrame
-            current_time = datetime.now()
-            feedback_df = pd.DataFrame({
-                'Time': [current_time],
-                'Feedback': [user_feedback]
-            })
-    
-            # Check if feedback file already exists
-            if not os.path.isfile('feedback.csv'):
-                feedback_df.to_csv('feedback.csv', index=False)
-            else: # Append the new feedback without writing headers
-                feedback_df.to_csv('feedback.csv', mode='a', header=False, index=False)
-    
-            st.success("Your feedback has been recorded!")
-    
-        # Display the 5 most recent feedbacks
-        if os.path.isfile('feedback.csv'):
-            all_feedbacks = pd.read_csv('feedback.csv')
-            all_feedbacks.sort_values('Time', ascending=False, inplace=True)
-            st.write("### 5 Most Recent Feedbacks:")
-            st.write(all_feedbacks.head(5))
     else:
         st.write("No data available. Please upload a file in the 'Data Understanding' section.")
     
+    # User Feedback section
+    st.write("### User Feedback")
+    user_feedback = st.text_area("Please share your comments or feedback:", value='')
+
+    if st.button("Submit Feedback"):
+        # Store the feedback with timestamp in a DataFrame
+        current_time = datetime.now()
+        feedback_df = pd.DataFrame({
+            'Time': [current_time],
+            'Feedback': [user_feedback]
+        })
+
+        # Check if feedback file already exists
+        if not os.path.isfile('feedback.csv'):
+            feedback_df.to_csv('feedback.csv', index=False)
+        else: # Append the new feedback without writing headers
+            feedback_df.to_csv('feedback.csv', mode='a', header=False, index=False)
+
+        st.success("Your feedback has been recorded!")
+
+    # Display the 5 most recent feedbacks
+    if os.path.isfile('feedback.csv'):
+        all_feedbacks = pd.read_csv('feedback.csv')
+        all_feedbacks.sort_values('Time', ascending=False, inplace=True)
+        st.write("### 5 Most Recent Feedbacks:")
+        st.write(all_feedbacks.head(5))
+
 elif choice == 'Modeling & Evaluation':
     st.write("### Modeling With KMeans")
     if st.session_state['df'] is not None:
@@ -324,10 +324,6 @@ elif choice == 'Modeling & Evaluation':
         st.write("### User Feedback")
         user_feedback = st.text_area("Please share your comments or feedback:", value='')
 
-        # User Feedback section
-        st.write("### User Feedback")
-        user_feedback = st.text_area("Please share your comments or feedback:", value='')
-    
         if st.button("Submit Feedback"):
             # Store the feedback with timestamp in a DataFrame
             current_time = datetime.now()
@@ -335,21 +331,22 @@ elif choice == 'Modeling & Evaluation':
                 'Time': [current_time],
                 'Feedback': [user_feedback]
             })
-    
+
             # Check if feedback file already exists
             if not os.path.isfile('feedback.csv'):
                 feedback_df.to_csv('feedback.csv', index=False)
             else: # Append the new feedback without writing headers
                 feedback_df.to_csv('feedback.csv', mode='a', header=False, index=False)
-    
+
             st.success("Your feedback has been recorded!")
-    
+
         # Display the 5 most recent feedbacks
         if os.path.isfile('feedback.csv'):
             all_feedbacks = pd.read_csv('feedback.csv')
             all_feedbacks.sort_values('Time', ascending=False, inplace=True)
             st.write("### 5 Most Recent Feedbacks:")
             st.write(all_feedbacks.head(5))
+
     else:
         st.write("No data available. Please upload a file in the 'Data Understanding' section.")
 
@@ -407,33 +404,26 @@ elif choice == 'Predict':
             
             # Cho phép người dùng tải xuống kết quả dưới dạng CSV
             csv_download_link(df_RFM, 'RFM_prediction_results.csv', 'Tải xuống kết quả dự đoán')
-
-        # User Feedback section
-        st.write("### User Feedback")
-        user_feedback = st.text_area("Please share your comments or feedback:", value='')
-    
-        if st.button("Submit Feedback"):
-            # Store the feedback with timestamp in a DataFrame
-            current_time = datetime.now()
-            feedback_df = pd.DataFrame({
-                'Time': [current_time],
-                'Feedback': [user_feedback]
-            })
-    
-            # Check if feedback file already exists
-            if not os.path.isfile('feedback.csv'):
-                feedback_df.to_csv('feedback.csv', index=False)
-            else: # Append the new feedback without writing headers
-                feedback_df.to_csv('feedback.csv', mode='a', header=False, index=False)
-    
-            st.success("Your feedback has been recorded!")
-    
-        # Display the 5 most recent feedbacks
-        if os.path.isfile('feedback.csv'):
-            all_feedbacks = pd.read_csv('feedback.csv')
-            all_feedbacks.sort_values('Time', ascending=False, inplace=True)
-            st.write("### 5 Most Recent Feedbacks:")
-            st.write(all_feedbacks.head(5))
         
     else:
         st.write("Bạn phải xuất mô hình trước khi tiến hành dự đoán.")
+
+    # User Feedback section
+    st.write("### User Feedback")
+    user_feedback = st.text_area("Please share your comments or feedback:", value='')
+
+    if st.button("Submit Feedback"):
+        # Store the feedback with timestamp in a DataFrame
+        current_time = datetime.now()
+        feedback_df = pd.DataFrame({
+            'Time': [current_time],
+            'Feedback': [user_feedback]
+        })
+
+        # Check if feedback file already exists
+        if not os.path.isfile('feedback.csv'):
+            feedback_df.to_csv('feedback.csv', index=False)
+        else: # Append the new feedback without writing headers
+            feedback_df.to_csv('feedback.csv', mode='a', header=False, index=False)
+
+        st.success("Your feedback has been recorded!")
