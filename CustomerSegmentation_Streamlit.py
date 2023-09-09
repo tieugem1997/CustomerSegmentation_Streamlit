@@ -8,7 +8,6 @@ import streamlit as st
 import os
 from datetime import datetime
 import squarify
-import findspark
 import base64
 
 # GUI setup
@@ -29,7 +28,13 @@ def load_data(uploaded_file):
     else:
         st.write("Please upload a data file to proceed.")
         return None
-    
+
+# Hàm để tạo liên kết tải xuống CSV
+def csv_download_link(df, csv_file_name, download_link_text):
+    csv_data = df.to_csv(index=True)
+    b64 = base64.b64encode(csv_data.encode()).decode()
+    href = f'<a href="data:file/csv;base64,{b64}" download="{csv_file_name}">{download_link_text}</a>'
+    st.markdown(href, unsafe_allow_html=True)    
 # Initializing session state variables
 if 'df' not in st.session_state:
     st.session_state['df'] = None
@@ -77,6 +82,9 @@ elif choice == 'Data Understanding':
         
         if st.session_state['uploaded_file'] is not None:
             load_data(st.session_state['uploaded_file'])
+
+    # st.session_state['uploaded_file'] = st.sidebar.file_uploader("Choose a file", type=['txt'])
+    # load_data(st.session_state['uploaded_file'])
     
     if st.session_state['df'] is not None:
         st.write("### Data Overview")
@@ -355,22 +363,48 @@ elif choice == 'Predict':
         
         # Phần mới thêm để nhận dữ liệu từ người dùng và dự đoán
         st.subheader("Dự đoán Cụm cho một Khách hàng mới")
+                
+        # Nhận dữ liệu từ người dùng
+        customer_name = st.text_input('Tên Khách hàng:')
+        recent_date = st.date_input('Ngày mua hàng gần nhất:')
+        quantity = st.number_input('Số lượng:', min_value=0)
+        monetary = st.number_input('Số tiền:', min_value=0.0)
         
-        # Tạo các trường để nhận giá trị Recency, Frequency, và Monetary từ người dùng
-        recency = st.number_input('Recency (số ngày kể từ lần mua hàng cuối cùng):', min_value=0)
-        frequency = st.number_input('Frequency (tổng số lần mua hàng):', min_value=0)
-        monetary = st.number_input('Monetary (tổng giá trị mua hàng):', min_value=0.0)
-        
-        # Khi người dùng nhấn nút "Dự đoán", tiến hành dự đoán cụm sử dụng mô hình KMeans
+        if 'df_new' not in st.session_state:
+            st.session_state['df_new'] = pd.DataFrame(columns=['Customer_id', 'day', 'Quantity', 'Sales'])
+
+        if st.button("Add"):
+            new_data = pd.DataFrame({'Customer_id': [customer_name], 'day': [recent_date], 'Quantity': [quantity], 'Sales': [monetary]})
+            if 'df_new' not in st.session_state:
+                st.session_state['df_new'] = new_data
+            else:
+                st.session_state['df_new'] = pd.concat([st.session_state['df_new'], new_data], ignore_index=True)
+            
+        st.write("Dữ liệu đã thêm:")
+        st.dataframe(st.session_state['df_new'])  # Hiển thị DataFrame sau khi người dùng nhấn "Add"
+
+        # Khi người dùng nhấn nút "Dự đoán", tiến hành dự đoán cụm
         if st.button("Dự đoán"):
-            # Tạo một DataFrame mới từ dữ liệu nhập
-            new_data = pd.DataFrame([[recency, frequency, monetary]], columns=['Recency', 'Frequency', 'Monetary'])
-            
+            # Tính toán giá trị Recency, Frequency, và Monetary
+            recent_date = pd.Timestamp.now().date()  # Cập nhật ngày hiện tại
+            df_RFM = st.session_state['df_new'].groupby('Customer_id').agg({
+                'day': lambda x: (recent_date - x.max()).days,  # Recency
+                'Customer_id': 'count',  # Frequency
+                'Sales': 'sum'  # Monetary
+            }).rename(columns={'day': 'Recency', 'Customer_id': 'Frequency', 'Sales': 'Monetary'})
+
             # Dự đoán cụm sử dụng mô hình đã huấn luyện
-            cluster_pred = model.predict(new_data)
+            cluster_pred = model.predict(df_RFM)
             
-            # Hiển thị cụm dự đoán
-            st.write(f"Khách hàng này thuộc cụm: {cluster_pred[0]}")
+            # Thêm cột dự đoán vào df_RFM
+            df_RFM['Cluster'] = cluster_pred
+
+            # Hiển thị DataFrame kết quả
+            st.write("Kết quả dự đoán:")
+            st.dataframe(df_RFM)
+            
+            # Cho phép người dùng tải xuống kết quả dưới dạng CSV
+            csv_download_link(df_RFM, 'RFM_prediction_results.csv', 'Tải xuống kết quả dự đoán')
         
     else:
         st.write("Bạn phải xuất mô hình trước khi tiến hành dự đoán.")
@@ -393,6 +427,4 @@ elif choice == 'Predict':
         else: # Append the new feedback without writing headers
             feedback_df.to_csv('feedback.csv', mode='a', header=False, index=False)
 
-        st.success("Your feedback has been recorded!")      
-
-      
+        st.success("Your feedback has been recorded!")
