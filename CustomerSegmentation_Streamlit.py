@@ -9,15 +9,6 @@ import os
 from datetime import datetime
 import squarify
 import findspark
-from pyspark import SparkConf
-from pyspark.sql import SparkSession
-from pyspark import SparkContext
-import pyspark
-from pyspark.sql import *
-from pyspark.ml.linalg import Vectors
-from pyspark.ml.feature import VectorAssembler
-from pyspark.ml.feature import StandardScaler
-from pyspark.ml.evaluation import ClusteringEvaluator
 import base64
 
 # GUI setup
