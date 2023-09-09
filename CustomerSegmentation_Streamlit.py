@@ -234,7 +234,7 @@ elif choice == 'Modeling & Evaluation':
         st.pyplot(fig)
 
         # Cho phép người dùng chọn số lượng cụm k 
-        n_clusters = st.sidebar.number_input('Chọn số lượng cụm k từ 2 đến 20:', min_value=2, max_value=20, step=1, key="cluster_value")
+        n_clusters = st.sidebar.number_input('Chọn số lượng cụm k từ 2 đến 20:', min_value=2, max_value=20, value=3, step=1, key="cluster_value")
         st.write(f'Bạn đã chọn phân thành {n_clusters} cụm.')
 
         # Áp dụng mô hình KMeans với số lượng cụm đã chọn
