@@ -55,8 +55,28 @@ if choice == 'Business Understanding':
 
     
 elif choice == 'Data Understanding':    
-    st.session_state['uploaded_file'] = st.sidebar.file_uploader("Choose a file", type=['txt'])
-    load_data(st.session_state['uploaded_file'])
+
+    # Liệt kê tất cả các file trong thư mục 'sample_data'
+    sample_files = os.listdir('data')
+    
+    # Tạo một radio button để cho phép người dùng chọn giữa việc sử dụng file mẫu hoặc tải lên file mới
+    data_source = st.sidebar.radio('Data source', ['Use a sample file', 'Upload a new file'])
+    
+    if data_source == 'Use a sample file':
+        # Cho phép người dùng chọn một file từ danh sách
+        selected_file = st.sidebar.selectbox('Choose a sample file', sample_files)
+        
+        # Đọc file được chọn (bạn sẽ cần thêm logic để đọc file tại đây)
+        file_path = os.path.join('data', selected_file)
+        st.session_state['uploaded_file'] = open(file_path, 'r')
+        load_data(st.session_state['uploaded_file'])
+
+    else:
+        # Cho phép người dùng tải lên một file mới
+        st.session_state['uploaded_file'] = st.sidebar.file_uploader("Choose a file", type=['txt'])
+        
+        if st.session_state['uploaded_file'] is not None:
+            load_data(st.session_state['uploaded_file'])
     
     if st.session_state['df'] is not None:
         st.write("### Data Overview")
