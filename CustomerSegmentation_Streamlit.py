@@ -1,3 +1,15 @@
+# pip 3.9
+pip install matplotlib
+pip install plotly
+# pip install scikit-learn
+pip install streamlit
+pip install seaborn
+pip install squarify
+pip install import-ipynb
+pip install utils
+pip install squarify
+pip install findspark
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
