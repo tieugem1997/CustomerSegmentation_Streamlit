@@ -28,7 +28,7 @@ Below are the libraries and frameworks used to create the project:
 
 #### **Video Demonstration**
 
-![Video Demo](https://github.com/tieugem1997/CustomerSegmentation_Streamlit/assets/39017335/e85452e3-ec15-45dc-961d-891e22abd75e)
+![Video Demo](https://github.com/tieugem1997/CustomerSegmentation_Streamlit/CustomerSegmentation_Streamlit.mp4)
 
 #### **Important Information**
 
