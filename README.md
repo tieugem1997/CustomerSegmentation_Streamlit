@@ -5,12 +5,12 @@
 #### **About**
 
 Welcome to our Customer Segmentation App, a dynamic tool developed utilizing **Streamlit**, the renowned open-source Python framework. This application facilitates the detailed analysis and segmentation of customer data, allowing businesses to fine-tune their strategies and grasp the nuances of various market segments more effectively.
-<br>
+
 #### **Live Link**
 
 Experience the live version hosted on **Streamlit**
-### 🔗 [Explore the Customer Segmentation App] [https://share.streamlit.io/gaganpreetkaurkalsi/sentimentanalysis-streamlit/main/app.py](https://gui-customersegmentation-nguyenthanhtrong.streamlit.app/)
-<br>
+
+[Explore the Customer Segmentation App](https://gui-customersegmentation-nguyenthanhtrong.streamlit.app/)
 
 #### **Project Specifications**
 
@@ -20,16 +20,11 @@ Our project is crafted using the following reliable libraries and frameworks:
 - **Framework**: streamlit
 - **Additional Utilities**: import-ipynb, utils
 
-<br>
-Video Demonstration
+#### **Video Demonstration**
 
-**Witness the app in action through our video demonstration!**       
+Witness the app in action through our video demonstration!
 
-![Watch the Video Demo](https://github-production-user-asset-6210df.s3.amazonaws.com/39017335/266809601-e87e6c47-e30d-43e8-93a2-958b297b30d2.mp4)
-
-[https://github-production-user-asset-6210df.s3.amazonaws.com/39017335/266809601-e87e6c47-e30d-43e8-93a2-958b297b30d2.mp4]
-
-<br>
+[![Watch the Video Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://github-production-user-asset-6210df.s3.amazonaws.com/39017335/266809601-e87e6c47-e30d-43e8-93a2-958b297b30d2.mp4)
 
 #### **Important Information**
 
@@ -66,6 +61,7 @@ Navigate through the app effortlessly:
 
 Your insights can shape the future of this app. Contribute through the feedback section.
 
-#### **Thank You! 🙏**
+#### **Thank You!**
 
-We appreciate your visit! If our project assists you in any way, don't forget to award it with a star ⭐ on GitHub!
+Thank you. I hope you liked the project.
+If you really did then don't forget to give a star⭐ to this repo. It would mean a lot.
