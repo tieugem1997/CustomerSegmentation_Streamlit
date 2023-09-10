@@ -21,13 +21,11 @@ Our project is crafted using the following reliable libraries and frameworks:
 - **Additional Utilities**: import-ipynb, utils
 
 <br>
-
 ## Video Demonstration
 
 **Witness the app in action through our video demonstration!**          
 
-https://github.com/tieugem1997/CustomerSegmentation_Streamlit/CustomerSegmentation_Streamlit.mp4
-
+https://github.com/tieugem1997/CustomerSegmentation_Streamlit/blob/main/CustomerSegmentation_Streamlit.mp4
 <br>
 
 #### **Important Information**
