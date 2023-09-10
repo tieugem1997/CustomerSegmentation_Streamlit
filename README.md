@@ -4,88 +4,67 @@
 
 #### **About**
 
-An agile customer segmentation tool powered by **Streamlit** — the open-source Python framework.
-
-Our tool leverages the versatility of Streamlit to analyze and segment customer bases using various data forms, fostering tailored strategies and deeper understanding of different market niches. It stands as a one-stop solution for businesses aiming for a targeted and personalized approach in their strategies.
+Welcome to our Customer Segmentation App, a dynamic tool developed utilizing **Streamlit**, the renowned open-source Python framework. This application facilitates the detailed analysis and segmentation of customer data, allowing businesses to fine-tune their strategies and grasp the nuances of various market segments more effectively.
 
 #### **Live Link**
 
-Hosted on **Streamlit**
-
-[Customer Segmentation App](https://gui-customersegmentation-nguyenthanhtrong.streamlit.app/)
+Experience the live version hosted on **Streamlit**
+### 🔗 [Explore the Customer Segmentation App] [https://share.streamlit.io/gaganpreetkaurkalsi/sentimentanalysis-streamlit/main/app.py](https://gui-customersegmentation-nguyenthanhtrong.streamlit.app/)
+<br>
 
 #### **Project Specifications**
 
-Below are the libraries and frameworks used to create the project:
+Our project is crafted using the following reliable libraries and frameworks:
 
-- matplotlib
-- plotly
-- streamlit
-- seaborn
-- squarify
-- import-ipynb
-- utils
+- **Visualization Tools**: matplotlib, plotly, seaborn, squarify
+- **Framework**: streamlit
+- **Additional Utilities**: import-ipynb, utils
 
-#### **Video Demonstration**
+<br>
 
-![Video Demo](https://github.com/tieugem1997/CustomerSegmentation_Streamlit/CustomerSegmentation_Streamlit.mp4)
+## Video Demonstration
+
+**Witness the app in action through our video demonstration!**          
+
+https://github.com/tieugem1997/CustomerSegmentation_Streamlit/CustomerSegmentation_Streamlit.mp4
+
+<br>
 
 #### **Important Information**
 
 ##### **Streamlit Application**
 
-This Streamlit application serves the purpose of customer segmentation based on RFM analysis and the KMeans algorithm.
+Dive into the world of customer segmentation with our Streamlit application, which employs RFM analysis and the KMeans algorithm for meticulous segmentation.
 
-##### **Main Features**
+##### **Highlight Features**
 
-The application is divided into several main sections:
+Explore the comprehensive sections of our application:
+- **Business Understanding**: Gain insights into the business objective and learn the perks of customer segmentation.
+- **Data Understanding**: Upload fresh data or opt for a sample file to delve into data exploration.
+- **Data Preparation**: Use handy tools to cleanse the data and delve into exploratory data analysis with our visualization tools.
+- **Modeling and Evaluation**: Engage with the RFM analysis and KMeans algorithm to identify the best clustering strategy and analyze the results through vivid visualizations.
+- **Predict**: Input new data and get predictions on the potential cluster for new customers while having the facility to download the results.
+- **Feedback**: Share your valuable feedback for the continual enhancement of the application.
 
-- **Business Understanding**
-  - Describes the business objective and the benefits of customer segmentation.
+##### **Libraries in Use**
 
-- **Data Understanding**
-  - Allows users to upload a new data file or use a sample file to gain a deeper understanding of the data.
+Leveraging the power of the following libraries for a seamless user experience:
+- **Data Handling**: pandas
+- **Visualization**: matplotlib, seaborn, plotly.express, squarify
+- **Machine Learning**: scikit-learn (KMeans)
+- **Framework**: streamlit
+- **Others**: os, datetime, pickle, base64
 
-- **Data Preparation**
-  - Provides tools to clean the data by removing duplicate rows and NA values.
-  - Displays the number of unique values for each column and the distribution of numeric columns.
-  - Creates charts to explore the data.
+##### **Guide to Users**
 
-- **Modeling and Evaluation**
-  - Conducts RFM analysis to calculate the Recency, Frequency, and Monetary value for each customer.
-  - Uses the Elbow method to determine the optimal number of clusters.
-  - Displays statistics for each cluster and creates scatter plots, treemaps, and 3D plots to explore the clusters.
+Navigate through the app effortlessly:
+- **Start**: Choose an option from the sidebar menu.
+- **Journey**: Follow the structured path from understanding the business perspective to predicting the clusters for new data inputs.
 
-- **Predict**
-  - Allows users to input new data and predict the cluster the new customer belongs to.
-  - Provides a link to download the prediction results as a CSV file.
+##### **Community Contribution**
 
-- **Feedback**
-  - Invites suggestions and feedback from users to improve the application in the future.
-
-##### **Libraries Used**
-
-- pandas
-- matplotlib
-- seaborn
-- plotly.express
-- scikit-learn (KMeans)
-- pickle
-- streamlit
-- os
-- datetime
-- squarify
-- base64
-
-##### **User Guide**
-
-- Start by selecting an item from the menu on the left.
-- Follow the steps from "Business Understanding" to "Predict" to understand how the application works from start to finish.
-
-##### **Contributions**
-
-- Users can contribute by providing feedback through the feedback section.
+Your insights can shape the future of this app. Contribute through the feedback section.
 
 #### **Thank You! 🙏**
 
-Thank you for visiting! If you find this project helpful, please don't hesitate to give it a star ⭐ on GitHub!
+We appreciate your visit! If our project assists you in any way, don't forget to award it with a star ⭐ on GitHub!
