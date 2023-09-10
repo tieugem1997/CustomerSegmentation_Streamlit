@@ -5,7 +5,7 @@
 #### **About**
 
 Welcome to our Customer Segmentation App, a dynamic tool developed utilizing **Streamlit**, the renowned open-source Python framework. This application facilitates the detailed analysis and segmentation of customer data, allowing businesses to fine-tune their strategies and grasp the nuances of various market segments more effectively.
-
+<br>
 #### **Live Link**
 
 Experience the live version hosted on **Streamlit**
@@ -24,8 +24,7 @@ Our project is crafted using the following reliable libraries and frameworks:
 ## Video Demonstration
 
 **Witness the app in action through our video demonstration!**          
-
-https://github.com/tieugem1997/CustomerSegmentation_Streamlit/blob/main/CustomerSegmentation_Streamlit.mp4
+https://github.com/tieugem1997/CustomerSegmentation_Streamlit/assets/39017335/e87e6c47-e30d-43e8-93a2-958b297b30d2
 <br>
 
 #### **Important Information**
