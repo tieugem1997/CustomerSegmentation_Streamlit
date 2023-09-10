@@ -21,12 +21,12 @@ Our project is crafted using the following reliable libraries and frameworks:
 - **Additional Utilities**: import-ipynb, utils
 
 <br>
-## Video Demonstration
+Video Demonstration
 
 **Witness the app in action through our video demonstration!**          
 ![Watch the Video Demo](https://github-production-user-asset-6210df.s3.amazonaws.com/39017335/266809601-e87e6c47-e30d-43e8-93a2-958b297b30d2.mp4)
 
-https://github-production-user-asset-6210df.s3.amazonaws.com/39017335/266809601-e87e6c47-e30d-43e8-93a2-958b297b30d2.mp4
+[https://github-production-user-asset-6210df.s3.amazonaws.com/39017335/266809601-e87e6c47-e30d-43e8-93a2-958b297b30d2.mp4]
 
 <br>
 
