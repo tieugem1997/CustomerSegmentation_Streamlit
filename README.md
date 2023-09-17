@@ -10,7 +10,7 @@ Welcome to our Customer Segmentation App, a dynamic tool developed utilizing **S
 
 Experience the live version hosted on **Streamlit**
 
-[Explore the Customer Segmentation App](https://gui-customersegmentation-nguyenthanhtrong.streamlit.app/)
+[Explore the Customer Segmentation App](https://sentiment-app-tiki.streamlit.app/)
 
 #### **Project Specifications**
 
